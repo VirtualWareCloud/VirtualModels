@@ -122,45 +122,22 @@
       padding: 40px;
     }
 
-    .model-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 8px;
     }
 
-    .model-card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    .slideshow-container img {
+      width: 100%;
+      display: none;
+      transition: opacity 1s ease-in-out;
     }
 
-    .model-card img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #d4af37;
-    }
-
-    .model-card h3 {
-      color: #fff;
-      margin-top: 15px;
-    }
-
-    .model-card p {
-      color: #ccc;
-    }
-
-    .model-card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #d4af37;
-      color: #000;
-      border-radius: 30px;
-      text-decoration: none;
+    .slideshow-container img.active {
+      display: block;
     }
 
     footer {
@@ -206,11 +183,18 @@
   </header>
 
   <main>
+    <div class="slideshow-container">
+      <img class="slide active" src="slide1.jpg" alt="Slide 1">
+      <img class="slide" src="slide2.jpg" alt="Slide 2">
+      <img class="slide" src="slide3.jpg" alt="Slide 3">
+      <img class="slide" src="slide4.jpg" alt="Slide 4">
+      <img class="slide" src="slide5.jpg" alt="Slide 5">
+      <img class="slide" src="slide6.jpg" alt="Slide 6">
+    </div>
 
-      <h1 class="animated-heading">Welcome to Virtual Models</h1>
-      <p style="text-align:center;">Discover, Book, and Connect with Top Talent</p>
-    
-</main>
+    <h1 class="animated-heading">Welcome to Virtual Models</h1>
+    <p style="text-align:center;">Discover, Book, and Connect with Top Talent</p>
+  </main>
 
   <footer>
     <div class="social-icons">
@@ -229,16 +213,19 @@
     function toggleMenu() {
       const navList = document.querySelector("nav ul");
       navList.classList.toggle("active");
-
-      // Optional: Close menu when link is clicked
-      if (navList.classList.contains("active")) {
-        navList.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            navList.classList.remove("active");
-          });
-        });
-      }
     }
+
+    // Auto Slider Script
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(showSlides, 4000); // every 4 seconds
   </script>
 
 </body>
