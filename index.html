@@ -7,6 +7,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -109,7 +111,7 @@
     .animated-heading {
       text-align: center;
       margin-top: 20px;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       animation: floatLeftRight 6s ease-in-out infinite alternate;
     }
 
@@ -119,25 +121,49 @@
     }
 
     main {
-      padding: 40px;
+      padding: 10px;
     }
 
     .slideshow-container {
-      max-width: 100%;
       position: relative;
+      max-width: 100%;
       margin: auto;
-      overflow: hidden;
-      border-radius: 8px;
     }
 
-    .slideshow-container img {
-      width: 100%;
+    .slide {
       display: none;
-      transition: opacity 1s ease-in-out;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
-    .slideshow-container img.active {
+    .slide.active {
       display: block;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     footer {
@@ -151,6 +177,7 @@
       justify-content: center;
       gap: 20px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
     .social-icons a {
@@ -162,71 +189,79 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="virtual-models-logo.png" alt="Virtual Models Logo">
-      <span>Virtual Models</span>
-    </div>
+<header>
+  <div class="logo">
+    <img src="virtual-models-logo.png" alt="Virtual Models Logo">
+    <span>Virtual Models</span>
+  </div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="OurModels.html">Our Models</a></li>
-        <li><a href="bookings.html">Bookings</a></li>
-        <li><a href="model-registration.html">Join</a></li>
-        <li><a href="gallery-images.html">Images</a></li>
-        <li><a href="gallery-videos.html">Videos</a></li>
-      </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="OurModels.html">Our Models</a></li>
+      <li><a href="bookings.html">Bookings</a></li>
+      <li><a href="model-registration.html">Join</a></li>
+      <li><a href="gallery-images.html">Images</a></li>
+      <li><a href="gallery-videos.html">Videos</a></li>
+    </ul>
+  </nav>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  </header>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
 
-  <main>
-    <div class="slideshow-container">
-      <img class="slide active" src="slide1.jpg" alt="Slide 1">
-      <img class="slide" src="slide2.jpg" alt="Slide 2">
-      <img class="slide" src="slide3.jpg" alt="Slide 3">
-      <img class="slide" src="slide4.jpg" alt="Slide 4">
-      <img class="slide" src="slide5.jpg" alt="Slide 5">
-      <img class="slide" src="slide6.jpg" alt="Slide 6">
-    </div>
+<main>
+  <div class="slideshow-container">
+    <img class="slide active" src="slide1.jpg" alt="Slide 1">
+    <img class="slide" src="slide2.jpg" alt="Slide 2">
+    <img class="slide" src="slide3.jpg" alt="Slide 3">
+    <img class="slide" src="slide4.jpg" alt="Slide 4">
+    <img class="slide" src="slide5.jpg" alt="Slide 5">
+    <img class="slide" src="slide6.jpg" alt="Slide 6">
 
-    <h1 class="animated-heading">Welcome to Virtual Models</h1>
-    <p style="text-align:center;">Discover, Book, and Connect with Top Talent</p>
-  </main>
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+  </div>
 
-  <footer>
-    <div class="social-icons">
-      <a href="#"><i class="fas fa-envelope"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <p>&copy; 2025 Virtual Models</p>
-  </footer>
+  <h1 class="animated-heading">Welcome to Virtual Models</h1>
+  <p style="text-align:center;">Discover, Book, and Connect with Top Talent</p>
+</main>
 
-  <script>
-    function toggleMenu() {
-      const navList = document.querySelector("nav ul");
-      navList.classList.toggle("active");
-    }
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <p>&copy; 2025 Virtual Models</p>
+</footer>
 
-    // Auto Slider Script
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
+<script>
+  function toggleMenu() {
+    const navList = document.querySelector("nav ul");
+    navList.classList.toggle("active");
+  }
 
-    function showSlides() {
-      slides.forEach(slide => slide.classList.remove("active"));
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add("active");
-    }
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide");
 
-    setInterval(showSlides, 4000); // every 4 seconds
-  </script>
+  function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }
+
+  function changeSlide(n) {
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }
+
+  setInterval(showSlides, 4000); // Auto change every 4 sec
+</script>
 
 </body>
 </html>
