@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery – Virtual Models</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #0f0f0f;
+      color: #d4af37;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png'), linear-gradient(135deg, #000000 0%, #1f1f1f 100%);
+      background-blend-mode: overlay;
+    }
+    header, footer {
+      background: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 50px;
+    }
+    .logo span {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #d4af37;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .image-placeholder {
+      background: #1f1f1f;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      border: 2px dashed #d4af37;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .social-icons a {
+      color: #d4af37;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="nobg_Logo.png" alt="Virtual Models Logo" />
+    <span>Virtual Models</span>
+  </div>
+</header>
+
+<main>
+  <h1>🖼️ Image Gallery</h1>
+  <p>Preview our upcoming content. Full image access coming soon!</p>
+  <div class="gallery-grid">
+    <div class="image-placeholder">Image 1 Placeholder</div>
+    <div class="image-placeholder">Image 2 Placeholder</div>
+    <div class="image-placeholder">Image 3 Placeholder</div>
+    <div class="image-placeholder">Image 4 Placeholder</div>
+  </div>
+</main>
+
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fas fa-envelope"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <p>&copy; 2025 Virtual Models</p>
+</footer>
+
+</body>
+</html>
