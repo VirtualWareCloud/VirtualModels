@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Virtual Models</title>
 
   <!-- Font Awesome -->
@@ -40,12 +41,12 @@
     }
 
     .logo img {
-      height: 50px;
+      height: 40px; /* Adjusted for better scaling */
       margin-right: 10px;
     }
 
     .logo span {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #d4af37;
     }
@@ -89,7 +90,7 @@
         background: #1c1c1c;
         width: 100%;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         padding: 20px 0;
         border-top: 1px solid #333;
@@ -109,7 +110,7 @@
     .animated-heading {
       text-align: center;
       margin-top: 20px;
-      font-size: 2.5rem;
+      font-size: 2rem; /* Adjusted for smaller screens */
       animation: floatLeftRight 6s ease-in-out infinite alternate;
     }
 
@@ -119,17 +120,17 @@
     }
 
     main {
-      padding: 40px;
+      padding: 20px; /* Reduced padding for smaller devices */
     }
 
     form {
-      max-width: 500px;
+      max-width: 100%; /* Make form width responsive */
       margin: auto;
       display: flex;
       flex-direction: column;
       gap: 15px;
       background: #1c1c1c;
-      padding: 30px;
+      padding: 20px; /* Adjusted for better scaling */
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
     }
@@ -180,6 +181,20 @@
       color: #d4af37;
       font-size: 1.5rem;
       text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .animated-heading {
+        font-size: 1.5rem;
+      }
+
+      form {
+        padding: 15px;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
