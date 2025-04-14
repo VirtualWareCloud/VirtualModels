@@ -1,4 +1,16 @@
 {
+  "name": "virtual-models",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "firebase": "^10.11.0"
+  }
+}
+
+{
   "name": "model-registration-project",
   "version": "1.0.0",
   "description": "A project for user registration and profile creation using a web form.",
